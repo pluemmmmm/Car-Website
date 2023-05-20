@@ -1,0 +1,158 @@
+:root {
+    --primaryyColor: #134280;
+    --secondaryyColor: #c2daf8;
+    --textColor: #a3a3a3;
+    --greyColor: #f4f4f4;
+    --whiteColor: #f5f4fa;
+    --blackColor: #434344;
+}
+
+.trending {
+    .secContainer {
+        .secHeading {
+            justify-content: space-between;
+            padding: 1rem 0;
+
+            .navBtns {
+                gap:  .5rem;
+
+                .icon {
+                    padding: 3px 5px;
+                    background: var(--secondaryyColor);
+                    border-radius: 3px;
+                    font-size: 30px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: var(--primaryyColor);
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+
+        .carContainer {
+            gap: 2rem;
+
+            .singleCar {
+                transition: .3s ease-out;
+                text-align: left;
+                .imgDiv {
+                    height: 100%px;
+                    width: 100%;
+                    overflow: hidden;
+                    border-radius: 10px;
+                    border: 5px solid transparent;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                .carTitle {
+                    color: var(--blackColor);
+                    font-size: 17px;
+                    padding-top: 10px;
+                }
+
+                .AWD {
+                    padding: 1rem 0;
+                    color: var(--blackColor);
+                    font-weight: 600;
+                    font-size: 15px;
+                }
+
+                .price_seller {
+                    gap: 1rem;
+
+                    span {
+                        cursor: pointer;
+                        padding: .5rem 1rem;
+                        border-radius: 3px;
+                        font-weight: 600;
+                    }
+
+                    .price {
+                        background: var(--secondaryyColor);
+                        color: var(--primaryyColor);
+                    }
+                    .seller {
+                        background: var(--greyColor);
+                        color: var(--textColor);
+                    }
+                }
+
+                &:hover {
+                    transform: translateY(-7px);
+
+                    .imgDiv {
+                        border: 5px solid var(--primaryyColor);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Media queries to make Trending div responsive
+@media screen and (min-width: 520px) {
+    .trending {
+        .secContainer {
+            .secHeading {
+                margin-bottom: 1rem;
+
+                .secTitle {
+                    font-size: 23px;
+                }
+
+                .navBtns {
+                    gap: .5rem;
+                    .icon {
+                        font-size: 40px;
+                    }
+                }
+            }
+
+            .carContainer {
+                grid-template-columns: repeat(2,1fr);
+
+                .singleCar {
+                    .carTitle {
+                        font-size: 18px;
+                    }
+                    .AWD {
+                        font-size: 16px;
+                    }
+                    .price_seller {
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 940px) {
+    .trending {
+        .secContainer {
+            .secHeading {
+
+                .secTitle {
+                    font-size: 28px;
+                }
+
+                .navBtns {
+                    gap: 1rem;
+                }
+            }
+
+            .carContainer {
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+    }
+}
